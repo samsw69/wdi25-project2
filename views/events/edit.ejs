@@ -1,0 +1,62 @@
+<h1>Edit Event</h1>
+<p>events/edit</p>
+
+<form method="POST" action="/events/<%= event.id %>">
+<input type="hidden" name="_method" value="PUT">
+
+  <div>
+    <label for="henName">Bride to be's name?</label>
+    <input type="text" name="henName" id="henName" value="<%= event.henName %>">
+  </div>
+
+  <div>
+    <label for="activity">Activity</label>
+    <input type="text" name="activity" id="activity" value="<%= event.activity %>">
+  </div>
+
+  <div>
+    <label for="date">Date</label>
+    <input type="date" name="date" id="date" value="<%= event.date %>">
+  </div>
+
+  <div>
+    <label for="time">Time</label>
+    <input type="time" name="time" id="time" value="<%= event.time %>">
+  </div>
+
+  <div>
+    <label for="comment">Description</label>
+    <input type="text" name="comment" id="comment" value="<%= event.comment %>">
+  </div>
+
+  <div>
+    <label>Images</label>
+    <input type="text" name="image" id="image" value="<%= event.image %>">
+  </div>
+
+  <div>
+    <label for="address1">Rating</label>
+    <input type="text" name="address1" id="address1" value="<%= event.address1 %>">
+  </div>
+
+  <div>
+    <label for="address2">Rating</label>
+    <input type="text" name="address2" id="address2" value="<%= event.address2 %>">
+  </div>
+
+  <div>
+    <label for="postcode">Rating</label>
+    <input type="text" name="postcode" id="postcode" value="<%= event.postcode %>">
+  </div>
+
+
+<%# can I make this a field which just displays the users name as only the user can make the edit?%>
+  <div>
+    <label for="createdBy">Created by</label>
+    <input type="text" name="createdBy" id="createdBy" value="<%= event.createdBy %>">
+  </div>
+
+  <button class="btn btn-primary">Add</button>
+
+</form>
+</main>

@@ -1,0 +1,11 @@
+<p>events/index</p>
+
+<% events.forEach((event) => { %>
+  <div>
+    <a href="/events/<%= event.id %>">
+      <img src="<%= event.image %>" alt="<%= event.title %>"></a>
+      <h2><%= event.activity %></h2>
+      <p><%= event.date %></p>
+      <p><%= event.time %></p>
+  </div>
+<% }) %>

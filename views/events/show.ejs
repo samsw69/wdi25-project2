@@ -1,0 +1,61 @@
+<p>view/events/show</p>
+
+
+<div class="row">
+  <div class="column"
+    <h1><%= event.activity %></h1>
+    <div class="date">
+      <p><%= event.date %></p>
+    </div>
+
+    <div class="time">
+      <p><%= event.time %></p>
+    </div>
+
+    <div class="comment">
+      <h4>What you need to know</h4>
+      <p><%= event.comment %></p>
+    </div>
+
+    <div class="location">
+      <p><%= event.address1 %></p>
+      <p><%= event.address2 %></p>
+      <p><%= event.postcode %></p>
+    </div>
+
+
+    <div class="eventOwner">
+      <p>Contact <%= event.createdBy %> for further information about this event.</p>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="aside"
+        <section>
+          <h4>What's cluck-a-lacking...?</h4>
+          <% event.comments.forEach((comment) => { %>
+            <p><%= comment.content %></p>
+            <small><%= comment.createdBy.username %></small>
+            <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
+            <form method="POST" action="/events/<%= event.id %>/comments/<%=comment.id %>">
+              <input type="hidden" name="_method" value="DELETE">
+              <button>Delete</button>
+            </form>
+            <form method="POST" action="/events/<%= event.id %>">
+              <input type="hidden" name="_method" value="EDIT">
+              <button>Edit</button>
+            </form>
+            <% } %>
+          <% }) %>
+        </section>
+
+  <% if(locals.isAuthenticated) { %>
+    <section>
+      <h4>Add a comment</h4>
+      <form method="POST" action="/events/<%= event.id %>/comment">
+        <textarea name="content" id="content" placeholder="Add comment"></textarea>
+        <button class="button">Cluck to Add</button>
+      </form>
+    </section>
+  <% } %>
+</div>
