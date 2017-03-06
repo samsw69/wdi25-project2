@@ -1,6 +1,6 @@
 const gulp       = require('gulp');
 const babel      = require('gulp-babel');
-const sass            = require('gulp-sass');
+const sass       = require('gulp-sass');
 const cleanCSS   = require('gulp-clean-css');
 const plumber    = require('gulp-plumber');
 const sequence   = require('gulp-sequence');

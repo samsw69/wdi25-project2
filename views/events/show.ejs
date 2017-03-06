@@ -1,5 +1,11 @@
 <p>view/events/show</p>
 
+<% if (locals.isAuthenticated && locals.createdBy) { %>
+<form method="POST" action="/events/<%= event.id %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <button>Delete</button>
+</form>
+<% } %>
 
 <div class="row">
   <div class="column"
@@ -23,8 +29,17 @@
       <p><%= event.postcode %></p>
     </div>
 
- <%# need to uncomment when googlemaps working%>
-    <%# <div id="map"></div>
+
+    <% if (locals.isAuthenticated) { %>
+      <div id="map" data-postcode="<%= user.postcode %>"></div>
+    <% } else { %>
+      <div class="home">
+        <h1><a href="/login">Log in</a> to view details for your hen weekend</h1>
+      </div>
+    <% } %>
+
+    <%# need to uncomment when googlemaps working%>
+      <%# <div id="map"></div>
     <div id="text"></div>%>
 
     <div class="eventOwner">
@@ -55,7 +70,7 @@
   <% if(locals.isAuthenticated) { %>
     <section>
       <h4>Add a comment</h4>
-      <form method="POST" action="/events/<%= event.id %>/comment">
+      <form method="POST" action="/events/<%= event.id %>/comments">
         <textarea name="content" id="content" placeholder="Add comment"></textarea>
         <button class="button">Cluck to Add</button>
       </form>

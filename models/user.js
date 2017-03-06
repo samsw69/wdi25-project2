@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
+  //changed user from username to user - may cause issues elsewhere?
   username: { type: String },
   email: { type: String },
   password: { type: String ,required: true }
@@ -12,8 +13,9 @@ userSchema
     this._passwordConfirmation = passwordConfirmation;
   });
 
+//get this checked and updated for FB
 userSchema.pre('validate', function checkPassword(next) {
-  if(!this.password && !this.githubId) {
+  if(!this.password && !this.facebookId) {
     this.invalidate('password', 'required');
   }
   if(this.isModified('password') && this._passwordConfirmation !== this.password) this.invalidate('passwordConfirmation', 'does not match');

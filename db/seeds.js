@@ -25,7 +25,7 @@ User
         activity: 'nude life drawing',
         date: '18.11.17',  //find out correct date format
         time: '11.00',  //find out correct time format
-        image: 'https://s-media-cache-ak0.pinimg.com/736x/d8/48/c4/d848c43ff37ed96838c739dfdb65beb5.jpg',
+        image: 'https://cdn.maximise.co.uk/images/prods/80852-85-nude-life-drawing.jpg',
         address1: '123 High Street',
         address2: 'Brighton',
         postcode: 'HP10 9AY',
@@ -40,7 +40,7 @@ User
         address1: '123 High Street',
         address2: 'Brighton',
         postcode: 'HP10 9AY',
-        image: 'https://s-media-cache-ak0.pinimg.com/736x/d8/48/c4/d848c43ff37ed96838c739dfdb65beb5.jpg',
+        image: 'http://partykrakow.co.uk/wp-content/uploads/2014/11/hen-party-at-home.jpg',
         createdBy: users[0]
       },{
         activity: 'Club Dazzle - ladies night!',
@@ -50,7 +50,7 @@ User
         address1: '123 High Street',
         address2: 'Brighton',
         postcode: 'HP10 9AY',
-        image: 'https://s-media-cache-ak0.pinimg.com/736x/d8/48/c4/d848c43ff37ed96838c739dfdb65beb5.jpg',
+        image: 'https://i.imgflip.com/paurx.jpg',
         createdBy: users[0]
       }]);
   })

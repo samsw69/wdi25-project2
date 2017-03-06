@@ -10,13 +10,13 @@ const users = require('../controllers/users');
 
 router.get('/', (req, res) => res.render('statics/index'));
 
-// shows users on a page - may need later?
+// shows users on a page
 router.route('/user')
   .get(secureRoute, users.show);
 
-//new addition to show new image for user / is this profile pic or an image upload - may need for admin to upload pics for app
-// router.route('/user/images/new')
-//   .get(secureRoute, users.newImage);
+// new addition to show new image for user / is this profile pic or an image upload - may need for admin to upload pics for app
+router.route('/user/images/new')
+  .get(secureRoute, users.newImage);
 
 //new add from instagram app
 // router.route('/user/images')
@@ -30,7 +30,8 @@ router.route('/login')
     .get(sessions.new)
     .post(sessions.create);
 
-
+router.route('/logout')
+  .get(sessions.delete);
 //check if this correct for FB
 // router.route('/oauth/facebook')
 //       .get(oauth.facebook);

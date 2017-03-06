@@ -1,4 +1,4 @@
-<p>events/index</p>
+<h2><% events.henName %> Hen do</h2>
 
 <% events.forEach((event) => { %>
   <div>
@@ -7,5 +7,17 @@
       <h2><%= event.activity %></h2>
       <p><%= event.date %></p>
       <p><%= event.time %></p>
+    </a>
   </div>
+
+  <% if (locals.isAuthenticated) { %>
+    <form method="POST" action="/events/<%= event.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button>Delete</button>
+    </form>
+  <% } %>
+
 <% }) %>
+<br>
+<br>
+<br>
