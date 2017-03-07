@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
   //changed user from username to user - may cause issues elsewhere?
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  username: { type: String, required: true },
-  email: { type: String, required: true },
-  password: { type: String ,required: true },
-  profileImage: { type: String }
-
+  firstName: { type: String },
+  lastName: { type: String },
+  username: { type: String },
+  email: { type: String },
+  password: { type: String },
+  profileImage: { type: String },
+  facebookId: { type: String }
 });
 
 userSchema
@@ -17,7 +17,14 @@ userSchema
     this._passwordConfirmation = passwordConfirmation;
   });
 
-//get this checked and updated for FB
+userSchema
+  .virtual('profileImageSRC')
+  .get(function getprofileImageSRC() {
+    if(!this.profileImage) return null;
+    if(this.profileImage.match(/^http/)) return this.profileImage;
+    return `https://s3-eu-west-1.amazonaws.com/wdi25-samsw69-project/${this.profileImage}`;
+  });
+
 userSchema.pre('validate', function checkPassword(next) {
   if(!this.password && !this.facebookId) {
     this.invalidate('password', 'required');

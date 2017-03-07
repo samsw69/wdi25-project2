@@ -1,24 +1,23 @@
 <%# do a complete review - DOES NOT WORK%>
 
-<h2>List of Chooks in attendance</h2>
+<p>here</p>
+<div class=showUser>
 
-<br>
-<br>
-<br>
-
-<div class=showUserList></div>
-
-<% if (locals.isAuthenticated) { %>
-    <% events.forEach((user) => { %>
-      <div>
-      <img src="<%= user.profileImage %>" alt="<%= user.username %>">
-      <p><%= user.firstName %> && " " && <% user.lastName %></p>
-      </div>
-    <% }) %>
+<% if (locals.isAuthenticated && locals.createdBy) { %>
+<form method="POST" action="/users/<%= user.id %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <button>Delete</button>
+</form>
 <% } %>
 
+<div class="row">
+  <div class="column"
+    <h1><%= user.firstName %></h1>
+  </div>
+  <br>
+  <br>
+  <br>
 
-// <div class="eventOwner">
-//   <p>Contact <%= event.createdBy %> for further information about this event.</p>
-// </div>
-//   </div>
+  <div class="image">
+    <img src="<%= user.profileImageSRC %>" alt="<%= user.firstName %>">
+  </div>

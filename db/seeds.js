@@ -16,7 +16,24 @@ User
     username: 'samsw69',
     email: 'samsw69@icloud.com',
     password: 'password',
-    passwordConfirmation: 'password'
+    passwordConfirmation: 'password',
+    profileImage: 'https://static.wixstatic.com/media/3a0aa5_d05123cc70cb47c28f5a12ff2ece6395.jpg'
+  },{
+    firstName: 'Emma',
+    lastName: 'Lidbury',
+    username: 'Lidders',
+    email: 'lidders@icloud.com',
+    password: 'password',
+    passwordConfirmation: 'password',
+    profileImage: 'https://i.ytimg.com/vi/4K_LAgnqqdE/maxresdefault.jpg'
+  },{
+    firstName: 'Emma',
+    lastName: 'Hester',
+    username: 'Donde',
+    email: 'donde@icloud.com',
+    password: 'password',
+    passwordConfirmation: 'password',
+    profileImage: 'http://4.bp.blogspot.com/-O2g5sn5OAOg/VSz9VE8CSsI/AAAAAAAAAUg/MJwocjXhsyw/s1600/old-skool-selfie.jpg'
   }])
   .then((users) => {
     console.log(`${users.length} users created`);
@@ -32,7 +49,6 @@ User
         postcode: 'HP10 9AY',
         comment: 'no zoom lense cameras allowed!!',
         createdBy: users[0]
-
       },{
         henName: 'Big Mo',
         activity: 'dinner at Chez Poulet',

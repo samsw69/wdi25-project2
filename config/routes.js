@@ -4,8 +4,8 @@ const sessions = require('../controllers/sessions');
 const secureRoute = require('../lib/secureRoute');
 const events = require('../controllers/events');
 const users = require('../controllers/users');
-// const oauth = require('../controllers/oauth');
-// const upload = require('../lib/upload');
+const oauth = require('../controllers/oauth');
+const upload = require('../lib/upload');
 
 
 router.get('/', (req, res) => res.render('statics/index'));
@@ -14,6 +14,13 @@ router.get('/', (req, res) => res.render('statics/index'));
 router.route('/users')
   .get(users.index);
   // .post(secureRoute, users.index);
+
+//drills down to one profile image
+router.route('/users/:id')
+  .get(users.show);
+  //may add these later to edit profile
+  // .put(secureRoute, users.update)
+  // .delete(secureRoute, users.delete);
 
 
 // **HENS INDEX - new addition to show new image for user / is this profile pic or an image upload - may need for admin to upload pics for app
@@ -26,7 +33,7 @@ router.route('/users')
 
 router.route('/register')
   .get(registrations.new)
-  .post(registrations.create);
+  .post(upload.single('profileImage'), registrations.create);
 
 router.route('/login')
     .get(sessions.new)
@@ -34,9 +41,9 @@ router.route('/login')
 
 router.route('/logout')
   .get(sessions.delete);
-//check if this correct for FB
-// router.route('/oauth/facebook')
-//       .get(oauth.facebook);
+
+router.route('/oauth/facebook')
+      .get(oauth.facebook);
 
 router.route('/events')
   .get(events.index)
