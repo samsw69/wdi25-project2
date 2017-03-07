@@ -22,6 +22,7 @@ User
     console.log(`${users.length} users created`);
     return Event
       .create([{
+        henName: 'Big Mo',
         activity: 'nude life drawing',
         date: '18.11.17',  //find out correct date format
         time: '11.00',  //find out correct time format
@@ -33,6 +34,7 @@ User
         createdBy: users[0]
 
       },{
+        henName: 'Big Mo',
         activity: 'dinner at Chez Poulet',
         date: '18.11.17',  //find out correct date format
         time: '18.00',  //find out correct time format
@@ -43,6 +45,7 @@ User
         image: 'http://partykrakow.co.uk/wp-content/uploads/2014/11/hen-party-at-home.jpg',
         createdBy: users[0]
       },{
+        henName: 'Big Mo',
         activity: 'Club Dazzle - ladies night!',
         date: '18.11.17',  //find out correct date format
         time: '21.00',  //find out correct time format

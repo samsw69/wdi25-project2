@@ -1,6 +1,5 @@
 <h1>Edit Event</h1>
-<p>events/edit</p>
-
+<div container=form>
 <form method="POST" action="/events/<%= event.id %>">
 <input type="hidden" name="_method" value="PUT">
 
@@ -53,10 +52,11 @@
 <%# can I make this a field which just displays the users name as only the user can make the edit?%>
   <div>
     <label for="createdBy">Created by</label>
-    <input type="text" name="createdBy" id="createdBy" value="<%= event.createdBy %>">
+    <input type="placeholder" name="createdBy" id="createdBy" value="<%= user.username %>">
   </div>
 
   <button class="btn btn-primary">Add</button>
 
 </form>
+</div>
 </main>

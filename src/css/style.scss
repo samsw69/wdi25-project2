@@ -1,33 +1,49 @@
 @import "bootstrap/bootstrap";
 
 $white: #FFF;
-$brand-color: #c99124;
+$brand-color: #c39797;
+
 
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Inconsolata', sans-serif;
 }
 
 * {
   font-family: inherit;
 }
 
+
 a{
   color: black;
   text-decoration: none;
 }
 
-h1, h2, h3 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 0;
+//check what this does
+h2 {
+  @extend .heading-styles;
+  font-size: 34px;
+  margin-top: 100px;
+  margin-left: 100px;
 }
 
-#map
-{
-  height:400px;
-  width:400px;
-  display:block;
+h2 {
+  font-size: 20px;
+  position: absolute;
+  // top: 50%;
+  // left: 50%;
+  transform: translate(-50%, -50%);
+  color: $brand-color;
 }
+
+h3  {
+  padding: 0px;
+}
+
+.heading-styles {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 
 header {
   position: fixed;
@@ -55,13 +71,13 @@ header {
           margin-left:  0;
         }
         &.menu {
-          color: black;
+          color: red;
           cursor: pointer;
           display: none;
           font-size: 20px;
         }
         a {
-          color: black;
+          color: blue;
           letter-spacing: 1px;
           text-transform: uppercase;
           font-weight: bold;
@@ -87,6 +103,9 @@ header {
     }
   }
 }
+
+
+
 
 // Homepage
 .home {
@@ -139,6 +158,25 @@ section {
   }
 }
 
+//this is for the page which shows all the events in one place.
+//Need to size images and headings and get layout for all devices
+.eventIndex {
+  h2: {
+    margin-top: 100px;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $brand-color;
+    }
+  h3:  {
+    padding: 50px;
+  }
+}
+
+
+
 #chook {
   //makes the image the height of the window
   height: 100vh;
@@ -152,7 +190,7 @@ section {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   color: $white;
+   color: $brand-color;
  }
  p {
    font-size: 26px;
@@ -160,8 +198,15 @@ section {
    top: 80%;
    left: 50%;
    transform: translate(-50%, -50%);
-   color: $white;
+   color: $brand-color;
  }
+}
+
+#map
+{
+  height:400px;
+  width:400px;
+  display:block;
 }
 
 #menus {

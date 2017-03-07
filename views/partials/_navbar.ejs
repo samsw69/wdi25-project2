@@ -1,15 +1,18 @@
 
-  <nav>
-    <ul>
+<nav class="container">
+  <ul>
+    <li class="menu">&#9776;</li>
+    <div class="dropdown">
       <% if(locals.isAuthenticated) { %>
-      <li><a href="/events">Hen Schedule</a></li>
-      <li><a href="/users/<%= locals.user.id %>">My Profile</a></li>
-      <li><a href="/users">All Hens</a></li>
-      <li><a href="/logout">Logout</a></li>
-    <% } else { %>
-      <li><a href="/">Home</a></li>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/register">Register</a></li>
-    <% } %>
-    </ul>
-  </nav>
+        <li><a href="/events">Hen Schedule</a></li>
+        <li><a href="/users/<%= locals.user.id %>">My Profile</a></li>
+        <li><a href="/users">All Hens</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <% } else { %>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+      <% } %>
+    </div>
+  </ul>
+</nav>

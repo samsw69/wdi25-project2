@@ -2,9 +2,13 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
   //changed user from username to user - may cause issues elsewhere?
-  username: { type: String },
-  email: { type: String },
-  password: { type: String ,required: true }
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  username: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String ,required: true },
+  profileImage: { type: String }
+
 });
 
 userSchema

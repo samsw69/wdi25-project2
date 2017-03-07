@@ -1,0 +1,28 @@
+<%# // REDO THIS PAGE FOR users%>
+
+
+<h2><% users.henName %> Hen do</h2>
+
+<% users.forEach((user) => { %>
+  <div class="row">
+    <div class="col-sm-4">
+      <section id="userIndex">
+        <a href="/users/<%= user.id %>"></a>
+        <img src="<%= user.profileImage %>" alt="<%= user.lastName %>">
+      <section>
+    </div>
+  </div>
+
+
+
+  <% if (locals.isAuthenticated) { %>
+    <form method="POST" action="/users/<%= user.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button>Delete</button>
+    </form>
+  <% } %>
+
+<% }) %>
+<br>
+<br>
+<br>

@@ -11,10 +11,11 @@ commentSchema.methods.ownedBy = function ownedBy(user) {
 };
 
 const eventSchema = new mongoose.Schema({
-  activity: { type: String, required: true},
+  henName: { type: String, required: true },
+  activity: { type: String, required: true },
   date: { type: String },
   time: { type: String },
-  image: { type: String, required: true },
+  image: { type: String },
   address1: { type: String, required: true },
   address2: { type: String, required: true },
   postcode: { type: String, required: true },

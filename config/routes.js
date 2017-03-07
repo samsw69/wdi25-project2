@@ -11,12 +11,14 @@ const users = require('../controllers/users');
 router.get('/', (req, res) => res.render('statics/index'));
 
 // shows users on a page
-router.route('/user')
-  .get(secureRoute, users.show);
+router.route('/users')
+  .get(users.index);
+  // .post(secureRoute, users.index);
 
-// new addition to show new image for user / is this profile pic or an image upload - may need for admin to upload pics for app
-router.route('/user/images/new')
-  .get(secureRoute, users.newImage);
+
+// **HENS INDEX - new addition to show new image for user / is this profile pic or an image upload - may need for admin to upload pics for app
+// router.route('/user/images/new')
+//   .get(secureRoute, users.profileImage);
 
 //new add from instagram app
 // router.route('/user/images')

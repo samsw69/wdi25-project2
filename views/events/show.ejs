@@ -1,4 +1,5 @@
-<p>view/events/show</p>
+<p>here</p>
+<div class=showEvent>
 
 <% if (locals.isAuthenticated && locals.createdBy) { %>
 <form method="POST" action="/events/<%= event.id %>">
@@ -31,7 +32,7 @@
 
 
     <% if (locals.isAuthenticated) { %>
-      <div id="map" data-postcode="<%= user.postcode %>"></div>
+      <div id="map" data-postcode="<%= event.postcode %>"></div>
     <% } else { %>
       <div class="home">
         <h1><a href="/login">Log in</a> to view details for your hen weekend</h1>
@@ -39,7 +40,7 @@
     <% } %>
 
     <%# need to uncomment when googlemaps working%>
-      <%# <div id="map"></div>
+    <%# <div id="map"></div>
     <div id="text"></div>%>
 
     <div class="eventOwner">
