@@ -4,11 +4,12 @@
   <div class="row">
     <div class="col-sm-4">
       <section id="eventIndex">
-        <a href="/events/<%= event.id %>"></a>
-        <img src="<%= event.image %>" alt="<%= event.title %>">
-        <h3><%= event.activity %></h3>
+        <img class="img-fluid" src="<%= event.image %>" alt="<%= event.title %>"
+        <p><a href="/events/<%= event.id %>"><%= event.activity %></a></p>
         <p><%= event.date %></p>
         <p><%= event.time %></p>
+
+
       </section>
     </div>
   </div>
@@ -23,6 +24,3 @@
   <% } %>
 
 <% }) %>
-<br>
-<br>
-<br>

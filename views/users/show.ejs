@@ -1,6 +1,3 @@
-<%# do a complete review - DOES NOT WORK%>
-
-<p>here</p>
 <div class=showUser>
 
 <% if (locals.isAuthenticated && locals.createdBy) { %>
@@ -18,6 +15,6 @@
   <br>
   <br>
 
-  <div class="image">
-    <img src="<%= user.profileImageSRC %>" alt="<%= user.firstName %>">
+  <div class="row">
+    <img class="img-fluid" src="<%= user.profileImageSRC %>" alt="<%= user.firstName %>">
   </div>

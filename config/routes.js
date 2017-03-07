@@ -53,7 +53,7 @@ router.route('/events/new')
   .get(secureRoute, events.new);
 
 router.route('/events/:id')
-  .get(events.show)
+  .get(secureRoute, events.show)
   .put(secureRoute, events.update)
   .delete(secureRoute, events.delete);
 

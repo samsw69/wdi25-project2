@@ -1,16 +1,17 @@
-<p>here</p>
 <div class=showEvent>
 
-<% if (locals.isAuthenticated && locals.createdBy) { %>
-<form method="POST" action="/events/<%= event.id %>">
-  <input type="hidden" name="_method" value="DELETE">
-  <button>Delete</button>
-</form>
-<% } %>
+  <% if (locals.isAuthenticated && locals.createdBy) { %>
+    <form method="POST" action="/events/<%= event.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button>Delete</button>
+    </form>
+  <% } %>
 
-<div class="row">
-  <div class="column"
-    <h1><%= event.activity %></h1>
+  <div class="row">
+    <div class="activity"
+      <h1><%= event.activity %></h1>
+    </div>
+
     <div class="date">
       <p><%= event.date %></p>
     </div>
@@ -29,44 +30,45 @@
       <p><%= event.address2 %></p>
       <p><%= event.postcode %></p>
     </div>
+</div>
 
-
-    <% if (locals.isAuthenticated) { %>
-      <div id="map" data-postcode="<%= event.postcode %>"></div>
-    <% } else { %>
-      <div class="home">
-        <h1><a href="/login">Log in</a> to view details for your hen weekend</h1>
-      </div>
-    <% } %>
+  <% if (locals.isAuthenticated) { %>
+    <div id="map" data-postcode="<%= event.postcode %>"></div>
+      <% } else { %>
+    <div class="home">
+      <h1><a href="/login">Log in</a> to view details for your hen weekend</h1>
+    </div>
+  <% } %>
 
     <%# need to uncomment when googlemaps working%>
     <%# <div id="map"></div>
     <div id="text"></div>%>
 
-    <div class="eventOwner">
-      <p>Contact <%= event.createdBy %> for further information about this event.</p>
+  <div class="eventOwner">
+    <p>Contact <%= event.createdBy %> for further information about this event.</p>
     </div>
   </div>
 
   <div class="row">
-      <div class="aside"
-        <section>
-          <h4>What's cluck-a-lacking...?</h4>
-          <% event.comments.forEach((comment) => { %>
-            <p><%= comment.content %></p>
-            <small><%= comment.createdBy.username %></small>
-            <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
-            <form method="POST" action="/events/<%= event.id %>/comments/<%=comment.id %>">
-              <input type="hidden" name="_method" value="DELETE">
-              <button>Delete</button>
-            </form>
-            <form method="POST" action="/events/<%= event.id %>">
-              <input type="hidden" name="_method" value="EDIT">
-              <button>Edit</button>
-            </form>
-            <% } %>
-          <% }) %>
-        </section>
+    <div class="aside">
+      <section>
+        <h4>What's cluck-a-lacking...?</h4>
+        <% event.comments.forEach((comment) => { %>
+        <p><%= comment.content %></p>
+        <small><%= comment.createdBy.username %></small>
+        <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
+          <form method="POST" action="/events/<%= event.id %>/comments/<%=comment.id %>">
+            <input type="hidden" name="_method" value="DELETE">
+            <button>Delete</button>
+          </form>
+
+          <form method="POST" action="/events/<%= event.id %>">
+            <input type="hidden" name="_method" value="EDIT">
+            <button>Edit</button>
+          </form>
+        <% } %>
+      <% }) %>
+      </section>
 
   <% if(locals.isAuthenticated) { %>
     <section>
@@ -77,4 +79,5 @@
       </form>
     </section>
   <% } %>
+</div>
 </div>
