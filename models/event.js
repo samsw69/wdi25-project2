@@ -20,7 +20,9 @@ const eventSchema = new mongoose.Schema({
   address2: { type: String, required: true },
   postcode: { type: String, required: true },
   createdBy: {type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-  comments: [ commentSchema ]
+  comments: [ commentSchema ],
+  lat: {type: Number },
+  lng: {type: Number }
 });
 
 module.exports = mongoose.model('Event', eventSchema);

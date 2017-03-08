@@ -17,7 +17,9 @@ User
     email: 'samsw69@icloud.com',
     password: 'password',
     passwordConfirmation: 'password',
-    profileImage: 'https://static.wixstatic.com/media/3a0aa5_d05123cc70cb47c28f5a12ff2ece6395.jpg'
+    profileImage: 'https://static.wixstatic.com/media/3a0aa5_d05123cc70cb47c28f5a12ff2ece6395.jpg',
+    knowHen: 'She is a minion in my netball team',
+    funnyStory: 'The Hen once climbed a pole at a festival to prove she could and was promptly chased down by Security, interrupting the show!'
   },{
     firstName: 'Emma',
     lastName: 'Lidbury',
@@ -25,7 +27,9 @@ User
     email: 'lidders@icloud.com',
     password: 'password',
     passwordConfirmation: 'password',
-    profileImage: 'https://i.ytimg.com/vi/4K_LAgnqqdE/maxresdefault.jpg'
+    profileImage: 'https://i.ytimg.com/vi/4K_LAgnqqdE/maxresdefault.jpg',
+    knowHen: 'I am her sister in Law',
+    funnyStory: 'farts and blames the dog when she visits for Sunday Dinner and thinks we dont know its her!'
   },{
     firstName: 'Emma',
     lastName: 'Hester',
@@ -33,7 +37,9 @@ User
     email: 'donde@icloud.com',
     password: 'password',
     passwordConfirmation: 'password',
-    profileImage: 'http://4.bp.blogspot.com/-O2g5sn5OAOg/VSz9VE8CSsI/AAAAAAAAAUg/MJwocjXhsyw/s1600/old-skool-selfie.jpg'
+    profileImage: 'http://4.bp.blogspot.com/-O2g5sn5OAOg/VSz9VE8CSsI/AAAAAAAAAUg/MJwocjXhsyw/s1600/old-skool-selfie.jpg',
+    knowHen: 'We work together at the biscuit factory',
+    funnyStory: 'She once got arrested as the suspected head of a Romanian girl gang operating in Uxbridge'
   }])
   .then((users) => {
     console.log(`${users.length} users created`);

@@ -21,10 +21,7 @@ function createRoute(req, res, next) {
   Event
     .create(req.body)
     .then(() => res.redirect('/events'))
-    .catch((err) => {
-      if(err.name === 'ValidationError') return res.badRequest(`/events/${req.params.id}/edit`, err.toString());
-      next(err);
-    });
+    .catch(next);
 }
 
 function showRoute(req, res, next) {

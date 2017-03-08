@@ -4,38 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <% include ./partials/_stylesheets %>
-
-    <title>PROJECT_NAME</title>
-
-    <%#<style type="text/css">
-    #map
-    {
-      height:400px;
-      width:400px;
-      display:block;
-    }
-  </style>%>
-
     <% include ./partials/_scripts %>
+    <title>The Chicken Coop</title>
   </head>
 
   <body>
     <header>
-      <div id="fb-root"></div>
       <%- include ./partials/_navbar %>
+      <div id="fb-root"></div>
       <% for(const type in messages) { %>
         <div class="<%= type %>">
           <h5><%= messages[type] %></h5>
         </div>
       <% } %>
     </header>
-    <%# facebook login - instructed to add to each page required%>
     <main>
       <%- body %>
     </main>
     <footer>
-      <p>&copy; beknow'in 2017</p>
+      <%- include ./partials/_footer %>
     </footer>
-
   </body>
 </html>

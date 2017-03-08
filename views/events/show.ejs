@@ -30,24 +30,11 @@
       <p><%= event.address2 %></p>
       <p><%= event.postcode %></p>
     </div>
+
+    <div id="map" data-lat="<%= event.lat %>" data-lng="<%= event.lng %>"></div>
+
+
 </div>
-
-  <% if (locals.isAuthenticated) { %>
-    <div id="map" data-postcode="<%= event.postcode %>"></div>
-      <% } else { %>
-    <div class="home">
-      <h1><a href="/login">Log in</a> to view details for your hen weekend</h1>
-    </div>
-  <% } %>
-
-    <%# need to uncomment when googlemaps working%>
-    <%# <div id="map"></div>
-    <div id="text"></div>%>
-
-  <div class="eventOwner">
-    <p>Contact <%= event.createdBy %> for further information about this event.</p>
-    </div>
-  </div>
 
   <div class="row">
     <div class="aside">
