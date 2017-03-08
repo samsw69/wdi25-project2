@@ -16,7 +16,7 @@
     <img class="img-fluid" src="<%= event.image %>" alt="<%= event.activity %>">
     <h2><%= event.activity %></h2>
     <p><%= event.date %> at <%= event.time %></p>
-    <p>Things you need to know:<%= event.comment %></p>
+    <p>Things you need to know<%= event.comments %></p>
     <p>Address<%= event.address1 %> <%= event.address2 %> <%= event.postcode %></p>
     <div id="map" data-lat="<%= event.lat %>" data-lng="<%= event.lng %>"></div>
   </div>
