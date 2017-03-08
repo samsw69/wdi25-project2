@@ -46,7 +46,7 @@ User
     return Event
       .create([{
         henName: 'Big Mo',
-        activity: 'nude life drawing',
+        activity: 'Nude life drawing',
         date: '18.11.17',  //find out correct date format
         time: '11.00',  //find out correct time format
         image: 'https://cdn.maximise.co.uk/images/prods/80852-85-nude-life-drawing.jpg',
@@ -57,7 +57,7 @@ User
         createdBy: users[0]
       },{
         henName: 'Big Mo',
-        activity: 'dinner at Chez Poulet',
+        activity: 'Dinner at Chez Poulet',
         date: '18.11.17',  //find out correct date format
         time: '18.00',  //find out correct time format
         comment: 'elasticated waists - eat more then you should buffet!!',

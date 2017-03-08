@@ -1,5 +1,4 @@
-<div class=showEvent>
-
+<div class="container-fluid">
   <% if (locals.isAuthenticated && locals.createdBy) { %>
     <form method="POST" action="/events/<%= event.id %>">
       <input type="hidden" name="_method" value="DELETE">
@@ -7,64 +6,41 @@
     </form>
   <% } %>
 
+  <main>
+  <div class="page-header">
+    <h1>So pleased you can join us <%= user.firstName %><br><small><%= event.henName %> is going to love this... </small></h1>
+  </div>
+
   <div class="row">
-    <div class="activity"
-      <h1><%= event.activity %></h1>
-    </div>
-
-    <div class="date">
-      <p><%= event.date %></p>
-    </div>
-
-    <div class="time">
-      <p><%= event.time %></p>
-    </div>
-
-    <div class="comment">
-      <h4>What you need to know</h4>
-      <p><%= event.comment %></p>
-    </div>
-
-    <div class="location">
-      <p><%= event.address1 %></p>
-      <p><%= event.address2 %></p>
-      <p><%= event.postcode %></p>
-    </div>
-
+  <div class="col-sm-8" id="image">
+    <img class="img-fluid" src="<%= event.image %>" alt="<%= event.activity %>">
+    <h2><%= event.activity %></h2>
+    <p><%= event.date %> at <%= event.time %></p>
+    <p>Things you need to know:<%= event.comment %></p>
+    <p>Address<%= event.address1 %> <%= event.address2 %> <%= event.postcode %></p>
     <div id="map" data-lat="<%= event.lat %>" data-lng="<%= event.lng %>"></div>
-
-
-</div>
+  </div>
 
   <div class="row">
-    <div class="aside">
-      <section>
-        <h4>What's cluck-a-lacking...?</h4>
-        <% event.comments.forEach((comment) => { %>
-        <p><%= comment.content %></p>
-        <small><%= comment.createdBy.username %></small>
-        <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
-          <form method="POST" action="/events/<%= event.id %>/comments/<%=comment.id %>">
-            <input type="hidden" name="_method" value="DELETE">
-            <button>Delete</button>
+    <div class="col-sm-4" id="aside">
+      <p>What's cluck-a-lacking...?</p>
+      <% event.comments.forEach((comment) => { %>
+      <p><%= comment.content %></p>
+      <small><%= comment.createdBy.username %></small>
+      <% if(locals.isAuthenticated) { %>
+        <section>
+          <h4>Add a comment</h4>
+          <form method="POST" action="/events/<%= event.id %>/comments">
+            <textarea name="content" id="content" placeholder="Add comment"></textarea>
+            <button class="button">Cluck to Add</button>
           </form>
+        </section>
+      <% } %>
 
-          <form method="POST" action="/events/<%= event.id %>">
-            <input type="hidden" name="_method" value="EDIT">
-            <button>Edit</button>
-          </form>
+      <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
+        <form method="POST" action="/events/<%= event.id %>/comments/<%=comment.id %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <button>Delete</button>
+        </form>
         <% } %>
       <% }) %>
-      </section>
-
-  <% if(locals.isAuthenticated) { %>
-    <section>
-      <h4>Add a comment</h4>
-      <form method="POST" action="/events/<%= event.id %>/comments">
-        <textarea name="content" id="content" placeholder="Add comment"></textarea>
-        <button class="button">Cluck to Add</button>
-      </form>
-    </section>
-  <% } %>
-</div>
-</div>

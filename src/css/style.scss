@@ -16,7 +16,7 @@ body {
 
 
 a{
-  color: black;
+  color: grey;
   text-decoration: none;
 }
 
@@ -48,13 +48,12 @@ h3  {
 
 
 header {
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 2;
   height: 40px;
-  background-color: rgba(20, 20, 20, 0);
+  background-color: rgba(120, 120, 120, 0);
   transition: background-color 0.2s ease;
   &.opaque {
     background-color: rgba(20, 20, 20, 0.6);
@@ -79,7 +78,7 @@ header {
           font-size: 20px;
         }
         a {
-          color: blue;
+          color: grey;
           letter-spacing: 1px;
           text-transform: uppercase;
           font-weight: bold;
@@ -177,7 +176,16 @@ section {
   }
 }
 
-
+.indexStyle {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+.page-header {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: plum;
+}
 
 #chook {
   //makes the image the height of the window
@@ -212,8 +220,8 @@ section {
 }
 
 #profilePicture {
-  height:250px;
-  width:250px;
+  height:550px;
+  width:500px;
   padding: 20px;
 }
 
@@ -231,28 +239,10 @@ section {
     }
   }
 }
-//
-//
-// #gallery {
-//   .image {
-//     background-position: center;
-//     background-size: cover;
-//     &:after {
-//       content: "";
-//       padding-bottom: 100%;
-//       display: block;
-//     }
-//     &.image-one {
-//       background-image: url('../assets/images/image-one.jpg');
-//     }
-//     &.image-two {
-//       background-image: url('../assets/images/image-two.jpg');
-//     }
-//     &.image-three {
-//       background-image: url('../assets/images/image-three.jpg');
-//     }
-//   }
-// }
+
+#userIndex {
+  padding: 20px;
+}
 
 #map {
 height: 300px;

@@ -1,5 +1,3 @@
-<p>events/new</p>
-
 <form method="POST" action="/events">
 
   <div>
@@ -28,7 +26,7 @@
   </div>
 
   <div>
-    <label>Add ink to image here</label>
+    <label>Add url for image here</label>
     <input type="text" name="image" id="image">
   </div>
 
@@ -47,13 +45,6 @@
     <input class="autocomplete" type="text" name="postcode" id="postcode">
     <input type="hidden" name="lat">
     <input type="hidden" name="lng">
-
-  </div>
-
-<%# can I auto add the username?%>
-  <div>
-    <label for="createdBy">Created by</label>
-    <input type="text" name="createdBy" id="createdBy">
   </div>
 
   <button class="button">Add</button>

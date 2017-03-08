@@ -1,6 +1,5 @@
 const Event = require('../models/event');
 
-//what is this doing?
 function indexRoute(req, res, next) {
   Event
     .find()

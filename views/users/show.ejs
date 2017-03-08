@@ -1,20 +1,25 @@
-<div class=showUser>
+<div class="container-fluid">
+  <% if (locals.isAuthenticated && locals.createdBy) { %>
+    <form method="POST" action="/users/<%= user.id %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <button>Delete</button>
+    </form>
+  <% } %>
 
-<% if (locals.isAuthenticated && locals.createdBy) { %>
-<form method="POST" action="/users/<%= user.id %>">
-  <input type="hidden" name="_method" value="DELETE">
-  <button>Delete</button>
-</form>
-<% } %>
-
-<div class="row">
-  <div class="column"
-    <h1><%= user.firstName %></h1>
+  <div class="page-header">
+    <h1>Meet <%= user.firstName %> <%= user.lastName %><br><small> aka <%= user.username %></small></h1>
   </div>
-  <br>
-  <br>
-  <br>
 
-  <div id="profilePicture">
-    <img class="img-fluid" src="<%= user.profileImageSRC %>" alt="<%= user.firstName %>">
+  <div class="row">
+    <div class="col-sm-6" id="profilePicture">
+      <img class="img-fluid" src="<%= user.profileImageSRC %>" alt="<%= user.firstName %>">
+    </div>
+    <div class="col-sm-6">
+      <p>Here's how I know the lucky hen:</p>
+      <p><%= user.knowHen %></p>
+      <br><br>
+      <p>And here's an embarrassing story for you:</p>
+      <p><%= user.funnyStory %></p>
+    </div>
   </div>
+</div>

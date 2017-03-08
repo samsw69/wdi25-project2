@@ -10,17 +10,13 @@ const upload = require('../lib/upload');
 
 router.get('/', (req, res) => res.render('statics/index'));
 
-// shows users on a page
 router.route('/users')
   .get(users.index);
-  // .post(secureRoute, users.index);
 
-//drills down to one profile image
 router.route('/users/:id')
-  .get(users.show);
-  //may add these later to edit profile
-  // .put(secureRoute, users.update)
-  // .delete(secureRoute, users.delete);
+  .get(users.show)
+  .post(secureRoute, users.edit)
+  .delete(secureRoute, users.delete);
 
 
 // **HENS INDEX - new addition to show new image for user / is this profile pic or an image upload - may need for admin to upload pics for app

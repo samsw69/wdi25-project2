@@ -2,9 +2,7 @@ const rp = require('request-promise');
 const oauth = require('../config/oauth');
 const User = require('../models/user');
 
-
 function facebook(req, res, next) {
-
   console.log(req.query);
   return rp({
     method: 'GET',
