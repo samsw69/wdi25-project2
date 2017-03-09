@@ -50,7 +50,7 @@ function deleteRoute(req, res, next) {
       if(!user) return res.notFound();
       return user.remove();
     })
-    .then(() => res.redirect('/users'))
+    .then(() => res.redirect('/'))
     .catch(next);
 }
 

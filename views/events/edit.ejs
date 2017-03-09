@@ -1,11 +1,13 @@
-<h1>Edit your event</h1>
+<div id="backgroundImages">
+
+  <h1>Edit your event</h1>
 
 <form method="POST" action="/events/<%= event.id %>">
   <input type="hidden" name="_method" value="PUT">
 
   <div>
     <label for="henName">Bride to be's name?</label>
-    <input type="text" name="henName" id="henName" value="<%= event.henName %>">
+    <input type="text" name="henName" id="henName" value="<%= event.henName %>" placeholder="Hen's name">
   </div>
 
   <div>
@@ -50,6 +52,7 @@
     <input type="hidden" name="lng">
   </div>
 
-  <button class="btn btn-primary">Edit</button>
-
+  <div>
+    <button type="button" class="btn btn-outline-info waves-effect">Edit</button>
+  </div>
 </form>

@@ -2,7 +2,7 @@
   <% if (locals.isAuthenticated && locals.createdBy) { %>
     <form method="POST" action="/events/<%= event.id %>">
     <input type="hidden" name="_method" value="DELETE">
-    <button>Delete</button>
+    <button type="button" class="btn btn-outline-info waves-effect">Delete</button>
     </form>
   <% } %>
 
@@ -14,7 +14,7 @@
 
   <div class="row">
     <% events.forEach((event) => { %>
-      <div class="col-sm-4" 
+      <div class="col-sm-4"
       <h2>date:<%= event.date %></h2>
       <h3><a href="/events/<%= event.id %>"><%= event.activity %></a></h3>
       <img class="img-fluid" src="<%= event.image %>" alt="<%= event.activity %>">

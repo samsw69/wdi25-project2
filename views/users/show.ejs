@@ -1,12 +1,4 @@
 <div class="container-fluid">
-  <% if (locals.isAuthenticated && (showUser.id === user.id)) { %>
-    <form method="POST" action="/users/<%= showUser.id %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <button>Delete</button>
-    </form>
-    <a href="/users/<%= showUser.id %>/edit">Edit</a>
-  <% } %>
-
   <div class="page-header">
     <h1>Meet <%= showUser.firstName %> <%= showUser.lastName %><br><small> aka <%= showUser.username %></small></h1>
   </div>
@@ -16,11 +8,19 @@
       <img class="img-fluid" src="<%= showUser.profileImageSRC %>" alt="<%= showUser.firstName %>">
     </div>
     <div class="col-sm-6">
-      <p>Here's how I know the lucky hen:</p>
+      <p><strong>Here's how I know the lucky hen:</strong></p>
       <p><%= showUser.knowHen %></p>
       <br><br>
-      <p>And here's an embarrassing story for you:</p>
+      <p><strong>And here's an embarrassing story for you:</strong></p>
       <p><%= showUser.funnyStory %></p>
+      <div>
+        <% if (locals.isAuthenticated && (showUser.id === user.id)) { %>
+          <form method="POST" action="/users/<%= showUser.id %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <a href="/users/<%= showUser.id %>/edit"><button type="button" class="btn btn-outline-info waves-effect">Edit</button>
+          </form>
+        <% } %>
+      </div>
     </div>
   </div>
 </div>

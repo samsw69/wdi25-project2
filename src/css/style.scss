@@ -1,12 +1,13 @@
 @import "bootstrap/bootstrap";
 
-$white: #FFF;
-$brand-color: #870431;
+$white: #FAF6F4;
+$brand-color: #750C75;
 
 
 body {
   font-family: 'Inconsolata', sans-serif;
-  padding-bottom: 50px;
+  margin-bottom: 12%;
+  font-size: 100%
 
 }
 
@@ -15,20 +16,16 @@ body {
 }
 
 
+
 a{
   color: grey;
   text-decoration: none;
 }
 
-// check what this does
+
 h2 {
   @extend .heading-styles;
-  // font-size: 34px;
-  // margin-top: 100px;
-  // margin-left: 100px;
   font-size: 25px;
-  // position: absolute;
-  // transform: translate(-50%, -50%);
   color: $brand-color;
 }
 
@@ -54,6 +51,7 @@ header {
     background-color: rgba(20, 20, 20, 0.6);
   }
   nav {
+    font-size: 20px;
     ul {
       list-style: none;
       padding: 0;
@@ -101,12 +99,10 @@ header {
 }
 
 
-
-
 // Homepage
 .home {
-  background-imgag: url(http://media.kentonline.co.uk/filerepository/archive/images2/chicken%20KE%20300413%20BH1_l.jpg);
-  height: calc(100vh - 50px);
+  // background-imgag: url(http://media.kentonline.co.uk/filerepository/archive/images2/chicken%20KE%20300413%20BH1_l.jpg);
+  // height: calc(100vh - 50px);
   position: relative;
   h1 {
     position: absolute;
@@ -151,6 +147,8 @@ section {
   }
   h2 {
     font-size: 28px;
+    font-family: 'Comfortaa', cursive;
+
   }
 }
 
@@ -165,6 +163,8 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     color: $brand-color;
+    font-family: 'Comfortaa', cursive;
+
     }
   h3:  {
     padding: 50px;
@@ -172,43 +172,87 @@ section {
 }
 
 .indexStyle {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Inconsolata', sans-serif;
   text-align: center;
+  font-weight: bold;
 }
 .page-header {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
-  color: plum;
+  color: #750C75;
 }
 
 #chook {
-  //makes the image the height of the window
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/chook.gif');
-  background-position: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/partyGirls.png');
   background-size: cover;
   position: relative;
+  font-family: 'Comfortaa', cursive;
+
   h1 {
-   font-size: 36px;
+   font-size: 60px;
    position: absolute;
-   top: 50%;
-   left: 50%;
+   top: 60%;
+   left: 70%;
    transform: translate(-50%, -50%);
-   color: $brand-color;
+   color: $white;
  }
+
  p {
    font-size: 26px;
    position: absolute;
-   top: 80%;
-   left: 50%;
+   top: 85%;
+   left: 70%;
    transform: translate(-50%, -50%);
-   color: $brand-color;
+   color: $white;
+ }
+
+
+ #subtext {
+   font-size: 26px;
+   position: absolute;
+   text-decoration-style: wavy;
+   top: 70%;
+   left: 73%;
+   transform: translate(-50%, -50%);
+   color: $white;
  }
 }
 
-#map
-{
+#addEvent {
+  background-repeat: no-repeat;
+  width: 100%;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 255, 0, 0.1), rgba(0, 0, 100, 0.1)), url('../assets/images/rollerCoaster.png');
+  opacity: 0.6;
+  background-position: center ;
+  background-size: cover;
+  font-family: 'Comfortaa', cursive;
+  .form-group {
+      text-align: left;
+      color:$white;
+      margin: none;
+      text-emphasis: strong;
+  }
+}
+#backgroundImages {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/partyGirls.png');
+  background-size: cover;
+  position: relative;
+  font-family: 'Comfortaa', cursive;
+
+}
+
+
+#layoutBasics {
+  padding-left: 50px;
+  font-size: 20px;
+  background-color: #F3EBF9;
+}
+
+#map {
   height:400px;
   width:400px;
   display:block;
@@ -239,6 +283,10 @@ section {
   padding: 20px;
 }
 
+#eventEdit {
+  left: 10%;
+}
+
 #map {
 height: 300px;
 background-color: grey;
@@ -249,6 +297,10 @@ background-color: grey;
   color: $blue;
 }
 
+#logo {
+  height: 100px;
+  width: 100px;
+}
 
 footer {
   background-color: rgba(20, 20, 20, 1);
