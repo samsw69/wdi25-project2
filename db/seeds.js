@@ -11,10 +11,10 @@ User.collection.drop();
 
 User
   .create([{
-    firstName: 'Sam',
-    lastName: 'Wakefield',
-    username: 'samsw69',
-    email: 'samsw69@icloud.com',
+    firstName: 'Becky',
+    lastName: 'Austin',
+    username: 'Bexster',
+    email: 'bexster@icloud.com',
     password: 'password',
     passwordConfirmation: 'password',
     profileImage: 'https://static.wixstatic.com/media/3a0aa5_d05123cc70cb47c28f5a12ff2ece6395.jpg',
@@ -47,34 +47,40 @@ User
       .create([{
         henName: 'Big Mo',
         activity: 'Nude life drawing',
-        date: '18.11.17',  //find out correct date format
-        time: '11.00',  //find out correct time format
+        date: '2017.11.18',
+        time: '11:00',
         image: 'https://cdn.maximise.co.uk/images/prods/80852-85-nude-life-drawing.jpg',
-        address1: '123 High Street',
+        address1: '13 Bond St,',
         address2: 'Brighton',
-        postcode: 'HP10 9AY',
-        comment: 'no zoom lense cameras allowed!!',
+        postcode: 'BN1 1RD',
+        lat: '50.823517',
+        lng: '-0.1405565',
+        description: 'no cameras, no touching, no sampling allowed - please sharpen your pencils in advance!!',
         createdBy: users[0]
       },{
         henName: 'Big Mo',
         activity: 'Dinner at Chez Poulet',
-        date: '18.11.17',  //find out correct date format
-        time: '18.00',  //find out correct time format
-        comment: 'elasticated waists - eat more then you should buffet!!',
-        address1: '123 High Street',
+        date: '2017.11.18',
+        time: '19:30',
+        description: 'elasticated waists - eat more then you should buffet - free bottle of wine between 2!!',
+        address1: '21a Norfolk Square',
         address2: 'Brighton',
-        postcode: 'HP10 9AY',
+        postcode: 'BN1 2PD',
+        lat: '50.8240312',
+        lng: '-0.1554573',
         image: 'http://partykrakow.co.uk/wp-content/uploads/2014/11/hen-party-at-home.jpg',
         createdBy: users[0]
       },{
         henName: 'Big Mo',
         activity: 'Club Dazzle - ladies night!',
-        date: '18.11.17',  //find out correct date format
-        time: '21.00',  //find out correct time format
-        comment: 'no cameras allowed!!',
-        address1: '123 High Street',
+        date: '2017.11.18',
+        time: '22:00',
+        description: 'Meet outside restaurant for cabs at 21.45 - VIP list arranged - 1st drink free!!',
+        address1: 'Kingswest, West St',
         address2: 'Brighton',
-        postcode: 'HP10 9AY',
+        postcode: 'BN1 2RE',
+        lat: '50.8208197',
+        lng: '-0.1461235',
         image: 'https://i.imgflip.com/paurx.jpg',
         createdBy: users[0]
       }]);

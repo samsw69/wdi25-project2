@@ -1,7 +1,7 @@
 @import "bootstrap/bootstrap";
 
 $white: #FFF;
-$brand-color: #c39797;
+$brand-color: #870431;
 
 
 body {
@@ -20,20 +20,15 @@ a{
   text-decoration: none;
 }
 
-//check what this does
+// check what this does
 h2 {
   @extend .heading-styles;
-  font-size: 34px;
-  margin-top: 100px;
-  margin-left: 100px;
-}
-
-h2 {
-  font-size: 20px;
-  position: absolute;
-  // top: 50%;
-  // left: 50%;
-  transform: translate(-50%, -50%);
+  // font-size: 34px;
+  // margin-top: 100px;
+  // margin-left: 100px;
+  font-size: 25px;
+  // position: absolute;
+  // transform: translate(-50%, -50%);
   color: $brand-color;
 }
 
@@ -110,8 +105,8 @@ header {
 
 // Homepage
 .home {
-  // background-imgag: url(http://media.kentonline.co.uk/filerepository/archive/images2/chicken%20KE%20300413%20BH1_l.jpg);
-  // height: calc(100vh - 50px);
+  background-imgag: url(http://media.kentonline.co.uk/filerepository/archive/images2/chicken%20KE%20300413%20BH1_l.jpg);
+  height: calc(100vh - 50px);
   position: relative;
   h1 {
     position: absolute;

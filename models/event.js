@@ -20,6 +20,7 @@ const eventSchema = new mongoose.Schema({
   address2: { type: String, required: true },
   postcode: { type: String, required: true },
   createdBy: {type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  description: { type: String },
   comments: [ commentSchema ],
   lat: {type: Number },
   lng: {type: Number }

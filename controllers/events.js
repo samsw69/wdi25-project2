@@ -89,7 +89,7 @@ function createCommentRoute(req, res, next) {
   .then((event) => {
     if(!event) return res.notFound();
 
-    event.comments.push(req.body); //create an embedded record
+    event.comments.push(req.body);
     return event.save();
   })
   .then((event) => res.redirect(`/events/${event.id}`))
@@ -102,7 +102,6 @@ function deleteCommentRoute(req, res, next) {
   .exec()
   .then((event) => {
     if(!event) return res.notFound();
-    //get embedded record by ID
     const comment = event.comments.id(req.params.commentId);
     comment.remove();
 
