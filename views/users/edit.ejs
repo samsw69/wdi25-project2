@@ -1,7 +1,7 @@
 <h1>Edit your user profile</h1>
-<div container=form>
+
 <form method="POST" action="/users/<%= user.id %>">
-<input type="text" name="_method" value="PUT">
+  <input type="hidden" name="_method" value="PUT">
 
   <div>
     <label for="firstName">First name?</label>
@@ -14,28 +14,13 @@
   </div>
 
   <div>
-    <label for="username">username</label>
+    <label for="username">Username</label>
     <input type="text" name="username" id="username" value="<%= user.username %>">
   </div>
 
   <div>
     <label for="email">Email address</label>
     <input type="email" name="email" id="email" value="<%= user.email %>">
-  </div>
-
-  <div>
-    <label for="password">Enter password</label>
-    <input type="password" name="password" id="password" value="<%= user.password %>">
-  </div>
-
-  <div>
-    <label for="passwordConfirmation">Re-enter password</label>
-    <input type="password" name="passwordConfirmation" id="passwordConfirmation" value="<%= user.passwordConfirmation %>">
-  </div>
-
-  <div>
-    <label for="profileImage">Add url for image here</label>
-    <input type="file" name="profileImage" id="profileImage" value="<%= user.profileImage %>">
   </div>
 
   <div>

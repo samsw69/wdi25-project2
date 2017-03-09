@@ -15,8 +15,11 @@ router.route('/users')
 
 router.route('/users/:id')
   .get(users.show)
-  .post(secureRoute, users.edit)
+  .put(secureRoute, users.update)
   .delete(secureRoute, users.delete);
+
+router.route('/users/:id/edit')
+  .get(users.edit);
 
 
 // **HENS INDEX - new addition to show new image for user / is this profile pic or an image upload - may need for admin to upload pics for app
@@ -57,10 +60,10 @@ router.route('/events/:id/edit')
   .get(secureRoute, events.edit);
 
 router.route('/events/:id/comments')
-.post(secureRoute, events.createComment);
+.post(events.createComment);
 
 router.route('/events/:id/comments/:commentId')
-.delete(secureRoute, events.deleteComment);
+.delete(events.deleteComment);
 
 
 

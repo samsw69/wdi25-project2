@@ -14,9 +14,9 @@ function showRoute(req, res, next) {
     .findById(req.params.id)
     .populate('users.username')
     .exec()
-    .then((user) => {
-      if(!user) return res.notFound();
-      return res.render('users/show', { user });
+    .then((showUser) => {
+      if(!showUser) return res.notFound();
+      return res.render('users/show', { showUser }); // user is the person who's profile you are on
     })
     .catch(next);
 }
@@ -64,7 +64,7 @@ function createCommentRoute(req, res, next) {
   .then((event) => {
     if(!event) return res.notFound();
 
-    event.comments.push(req.body);
+    event.comment.push(req.body);
     return event.save();
   })
   .then((event) => res.redirect(`/events/${event.id}`))
@@ -77,7 +77,7 @@ function deleteCommentRoute(req, res, next) {
   .exec()
   .then((event) => {
     if(!event) return res.notFound();
-    const comment = event.comments.id(req.params.commentId);
+    const comment = event.comment.id(req.params.commentId);
     comment.remove();
 
     return event.save();
@@ -91,11 +91,34 @@ function editRoute(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((user) => {
-      if(req.user.id === event.createdBy.toString()) {
+      if( req.user.id === user.id ) {
         return res.render('users/edit', { user });
+      } else {
+        req.flash('alert', 'Not authorized');
+        return res.redirect(`/users/${user.id}`);
       }
     })
     .catch(next);
+}
+
+function updateRoute(req, res, next) {
+  User
+    .findById(req.params.id)
+    .exec()
+    .then((user) => {
+      if(!user) return res.notFound();
+
+      for(const field in req.body) {
+        user[field] = req.body[field];
+      }
+
+      return user.save();
+    })
+    .then(() => res.redirect(`/users/${req.params.id}`))
+    .catch((err) => {
+      if(err.name === 'ValidationError') return res.badRequest(`/users/${req.params.id}/edit`, err.toString());
+      next(err);
+    });
 }
 
 
@@ -109,5 +132,6 @@ module.exports = {
   createImage: createImageRoute,
   createComment: createCommentRoute,
   deleteComment: deleteCommentRoute,
-  edit: editRoute
+  edit: editRoute,
+  update: updateRoute
 };

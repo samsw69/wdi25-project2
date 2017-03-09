@@ -26,7 +26,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Event
     .findById(req.params.id)
-    .populate('comments.createdBy')
+    .populate('createdBy comments.createdBy')
     .exec()
     .then((event) => {
       if(!event) return res.notFound();

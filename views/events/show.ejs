@@ -1,10 +1,4 @@
 <div class="container-fluid">
-  <% if (locals.isAuthenticated && locals.createdBy) { %>
-    <form method="POST" action="/events/<%= event.id %>">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" class="btn btn-info" value="Submit Button">
-    </form>
-  <% } %>
 
   <div class="page-header">
     <h1>So pleased you can join us<br><small><%= event.henName %> is going to love this... </small></h1>
@@ -23,33 +17,31 @@
     <div class="col-sm-4" id="aside">
       <p>What's cluck-a-lacking...?</p>
 
+      <section>
+        <h4>Commments</h4>
+        <% event.comments.forEach((comment) => { %>
+          <p><%= comment.content %></p>
+          <small><%= comment.createdBy.username %></small>
+
+          <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
+            <form method="POST" action="/events/<%= event.id %>/comments/<%= comment.id %>">
+              <input type="hidden" name="_method" value="DELETE">
+              <button>Delete</button>
+            </form>
+          <% } %>
+        <% }) %>
+      </section>
+
       <% if(locals.isAuthenticated) { %>
+        <section>
           <h4>Add a comment</h4>
           <form method="POST" action="/events/<%= event.id %>/comments">
             <textarea name="content" id="content" placeholder="Add comment"></textarea>
-            <button class="Submit">Cluck to Add</button>
+            <button class="button">Cluck to Add</button>
           </form>
+        </section>
       <% } %>
 
-      <% event.comments.forEach((comment) => { %>
-
-//THIS LINE IS THROWING PROBLEMS********************************
-        <p><%= comments.content %></p>
-
-        <small><%= comments.createdBy.username %></small>
-
-        <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
-          <form method="POST" action="/events/<%= event.id %>/comments/<%=comment.id %>">
-            <input type="hidden" name="_method" value="DELETE">
-            <button>Delete</button>
-          </form>
-
-          <form method="POST" action="/events/<%= event.id %>">
-            <input type="hidden" name="_method" value="EDIT">
-            <button>Edit</button>
-          </form>
-        <% } %>
-      <% }) %>
     </div>
   </div>
 </div>

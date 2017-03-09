@@ -1,7 +1,7 @@
 <h1>Edit your event</h1>
-<div container=form>
+
 <form method="POST" action="/events/<%= event.id %>">
-<input type="hidden" name="_method" value="PUT">
+  <input type="hidden" name="_method" value="PUT">
 
   <div>
     <label for="henName">Bride to be's name?</label>
@@ -24,8 +24,8 @@
   </div>
 
   <div>
-    <label for="comment">Description</label>
-    <input type="text" name="comment" id="comment" value="<%= event.comment %>">
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description" value="<%= event.description %>">
   </div>
 
   <div>

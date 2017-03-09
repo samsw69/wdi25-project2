@@ -19,14 +19,14 @@ function facebook(req, res, next) {
  .then((token) => {
 
    return rp.get({
-     url: 'https://graph.facebook.com/v2.5/me?fields=id,name,email,picture',
+     url: 'https://graph.facebook.com/v2.5/me?fields=id,name,email,picture.height(961)',
      qs: token,
      json: true
    });
  })
  .then((profile) => {
    console.log(profile);
-   return User.findOne({email: profile.email })//first check their emails in case they already exist on our system
+   return User.findOne({$or: [{ email: profile.email }, { facebookId: profile.id }]})//first check their emails in case they already exist on our system
      .then((user) => {
        if(!user) {
          user = new User({
@@ -43,6 +43,10 @@ function facebook(req, res, next) {
  .then((user) => {
    req.session.userId = user.id;
    req.session.isAuthenticated = true;
+
+   if (!user.firstName || !user.lastName || !user.email || !user.knowHen || !user.funnyStory) {
+     return res.redirect(`/users/${user.id}/edit`);
+   }
 
    req.flash('info', `welcome back ${user.username}!`);
    res.redirect('/');
