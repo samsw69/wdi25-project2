@@ -1,38 +1,29 @@
 <h1>Edit your user profile</h1>
-
 <form method="POST" action="/users/<%= user.id %>">
   <input type="hidden" name="_method" value="PUT">
-
   <div>
     <label for="firstName">First name?</label>
     <input type="text" name="firstName" id="firstName" value="<%= user.firstName %>">
   </div>
-
   <div>
     <label for="lastName">Surname</label>
     <input type="text" name="lastName" id="lastName" value="<%= user.lastName %>">
   </div>
-
   <div>
     <label for="username">Username</label>
     <input type="text" name="username" id="username" value="<%= user.username %>">
   </div>
-
   <div>
     <label for="email">Email address</label>
     <input type="email" name="email" id="email" value="<%= user.email %>">
   </div>
-
   <div>
     <label for="knowHen">How do you know the hen?</label>
     <input type="text" name="knowHen" id="knowHen" value="<%= user.knowHen %>">
   </div>
-
   <div>
     <label for="funnyStory">Funny Story?</label>
     <input type="text" name="funnyStory" id="funnyStory" value="<%= user.funnyStory %>">
   </div>
-
   <input class="btn btn-outline-info waves-effect" type="submit" value="Submit">
-
 </form>

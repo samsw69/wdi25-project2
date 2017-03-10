@@ -6,30 +6,30 @@
 
   <div class="row">
     <div class="col-sm-8" id="image">
-      <img class="img-fluid" src="<%= event.image %>" alt="<%= event.activity %>">
+      <img class="img-fluid" src="<%= event.image %>" alt="<%= event.activity %>" class="circle" width="404" height="336">
       <h2><%= event.activity %></h2>
       <p><%= event.date %> at <%= event.time %></p>
       <p>Things you need to know:  <%= event.description %></p>
       <p>Address: <%= event.address1 %> <%= event.address2 %> <%= event.postcode %></p>
       <div id="map" data-lat="<%= event.lat %>" data-lng="<%= event.lng %>"></div>
-  </div>
+    </div>
 
-  <div class="col-sm-4" id="aside">
-    <p>What's cluck-a-lacking...?</p>
+    <div class="col-sm-4" id="aside">
+      <h3>What's cluck-a-lacking...?</h3>
 
-    <section>
-      <h4>Commments</h4>
-       <% event.comments.forEach((comment) => { %>
-        <p><%= comment.content %></p>
-        <small><%= comment.createdBy.username %></small>
-        <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
-          <form method="POST" action="/events/<%= event.id %>/comments/<%= comment.id %>">
-            <input type="hidden" name="_method" value="DELETE">
-            <button class="btn btn-outline-info waves-effect">Delete</button>
-          </form>
-        <% } %>
-      <% }) %>
-    </section>
+      <section>
+        <h4>Commments</h4>
+          <% event.comments.forEach((comment) => { %>
+            <p><%= comment.content %></p>
+            <small><%= comment.createdBy.username %></small>
+            <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
+              <form method="POST" action="/events/<%= event.id %>/comments/<%= comment.id %>">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="btn btn-outline-info waves-effect">Delete</button>
+              </form>
+            <% } %>
+          <% }) %>
+      </section>
 
       <% if(locals.isAuthenticated) { %>
         <section>

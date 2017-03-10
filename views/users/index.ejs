@@ -7,7 +7,7 @@
     <div class="row">
       <% users.forEach((user) => { %>
         <div class="col-sm-4" id="userIndex">
-          <img class="img-fluid" src="<%= user.profileImageSRC %>" alt="<%= user.firstName %>">
+          <img class="img-fluid" src="<%= user.profileImageSRC %>" alt="<%= user.firstName %>" class="circle" width="304" height="236">
           <h3><a href="/users/<%= user.id %>"><%= user.username %></a></h3>
         </div>
       <% }) %>

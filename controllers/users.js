@@ -16,7 +16,7 @@ function showRoute(req, res, next) {
     .exec()
     .then((showUser) => {
       if(!showUser) return res.notFound();
-      return res.render('users/show', { showUser }); // user is the person who's profile you are on
+      return res.render('users/show', { showUser });
     })
     .catch(next);
 }
@@ -120,9 +120,6 @@ function updateRoute(req, res, next) {
       next(err);
     });
 }
-
-
-
 
 module.exports = {
   index: indexRoute,

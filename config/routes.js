@@ -7,7 +7,6 @@ const users = require('../controllers/users');
 const oauth = require('../controllers/oauth');
 const upload = require('../lib/upload');
 
-
 router.get('/', (req, res) => res.render('statics/index'));
 
 router.route('/users')
@@ -55,8 +54,6 @@ router.route('/events/:id/comments')
 
 router.route('/events/:id/comments/:commentId')
 .delete(events.deleteComment);
-
-
 
 router.all('*', (req, res) => res.notFound());
 module.exports = router;

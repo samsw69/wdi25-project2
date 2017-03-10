@@ -20,6 +20,9 @@ Subsequent logins via Facebook will not require this additional step.
 ####Profile pages
 #####Visit the Coop
 This index page shows all attendees for the weekend, by profile picture and nickname (username).
+
+![](./src/assets/images/CR_UserIndex.png)
+
 Clicking on a username will re-direct to the individual profile page.  Here, you will find further user information which includes:
 
 * full name
@@ -28,12 +31,17 @@ Clicking on a username will re-direct to the individual profile page.  Here, you
 * the relationship between hen and attendee
 * a funny story about the hen
 
+![](./src/assets/images/CR_User.png)
+
 Users are able to edit or delete their own profile only and can do so by accessing their details at 'My Profile'
 
 ####Hen Schedule
 The full itinerary can be found in one place on the events index page.
 
 Here a teaser image is visible along with the activity title, date and time.
+
+![](./src/assets/images/CR_EventIndex1.png)
+
 
 Users can click on a specific event for more details.
 An additional field is available which highlights further information and details about logistics, what to bring, reminders etc.
@@ -42,16 +50,12 @@ The address is provided which also links to a google map.
 
 To the right of the page is a field which users can add comments to as well as delete them.
 
+![](./src/assets/images/CR_Event2.png)
+
+
 #####Add Event
 Add event to upload a new event, which will show on the index page.
 
-
-(((ADD SCREEN SHOTS)))
-![](./images/CP_selectHunkScreen.png)
-
-
-
-![](./images/CP_gamePlay.png)
 
 ####Approach / How It Works
 This is a full stack application which utilises RESTful routing.  
@@ -86,10 +90,6 @@ The greatest challenges were:
 5. Bootstrap - a great tool but also requires some knowledge to make best use of it.
 6. Styling!
 
-
-(((ADD IMAGES HERE)))
-(((ADD WIREFRMING EXAMPLE AND LINK)))
-![](./images/CP_gameArray.png)
 
 ####Wins
 1. This project was made easier by the variety and quality of reference material from both coursework and lesson notes.  This enabled me to find solutions quickly, understand what my bugs were and quite often, how to fix them.  

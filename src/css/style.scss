@@ -1,43 +1,11 @@
 @import "bootstrap/bootstrap";
 
 $white: #FAF6F4;
-$brand-color: #750C75;
-
-
-body {
-  font-family: 'Inconsolata', sans-serif;
-  margin-bottom: 12%;
-  font-size: 100%
-
-}
+$brand-color: #380499;
 
 * {
   font-family: inherit;
 }
-
-
-
-a{
-  color: grey;
-  text-decoration: none;
-}
-
-
-h2 {
-  @extend .heading-styles;
-  font-size: 25px;
-  color: $brand-color;
-}
-
-h3  {
-  padding: 0px;
-}
-
-.heading-styles {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 
 header {
   top: 0;
@@ -65,8 +33,6 @@ header {
           margin-left:  0;
         }
         &.menu {
-          color: red;
-          cursor: pointer;
           display: none;
           font-size: 20px;
         }
@@ -98,11 +64,33 @@ header {
   }
 }
 
+body {
+  font-family: 'Inconsolata', sans-serif;
+  margin-bottom: 12%;
+  font-size: 100%
+}
 
-// Homepage
+a{
+  color: grey;
+  text-decoration: none;
+}
+
+h2 {
+  @extend .heading-styles;
+  font-size: 25px;
+  color: $brand-color;
+}
+
+h3  {
+  padding: 0px;
+}
+
+.heading-styles {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .home {
-  // background-imgag: url(http://media.kentonline.co.uk/filerepository/archive/images2/chicken%20KE%20300413%20BH1_l.jpg);
-  // height: calc(100vh - 50px);
   position: relative;
   h1 {
     position: absolute;
@@ -121,21 +109,6 @@ header {
   }
 }
 
-.main {
-  // height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/rooster_close_up.jpg');
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  h1 {
-   font-size: 36px;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   color: $white;
- }
-}
 section {
   text-align: center;
   padding-top: 80px;
@@ -148,12 +121,9 @@ section {
   h2 {
     font-size: 28px;
     font-family: 'Comfortaa', cursive;
-
   }
 }
 
-//this is for the page which shows all the events in one place.
-//Need to size images and headings and get layout for all devices
 .eventIndex {
   h2: {
     margin-top: 100px;
@@ -164,8 +134,8 @@ section {
     transform: translate(-50%, -50%);
     color: $brand-color;
     font-family: 'Comfortaa', cursive;
-
     }
+
   h3:  {
     padding: 50px;
   }
@@ -182,11 +152,17 @@ section {
   margin-bottom: 50px;
   color: #750C75;
 }
+#layoutBasics {
+  padding-left: 50px;
+  font-size: 20px;
+  background-color: #F3EBF9;
+}
 
 #chook {
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/partyGirls.png');
   background-size: cover;
+  padding: none;
   position: relative;
   font-family: 'Comfortaa', cursive;
 
@@ -242,14 +218,6 @@ section {
   background-size: cover;
   position: relative;
   font-family: 'Comfortaa', cursive;
-
-}
-
-
-#layoutBasics {
-  padding-left: 50px;
-  font-size: 20px;
-  background-color: #F3EBF9;
 }
 
 #map {
@@ -262,21 +230,6 @@ section {
   height:550px;
   width:500px;
   padding: 20px;
-}
-
-#menus {
-  a {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 2px solid $brand-color;
-    padding: 5px 10px;
-    font-weight: bold;
-    color: $brand-color;
-    display: inline-block;
-    &:hover {
-      border-style: dotted;
-    }
-  }
 }
 
 #userIndex {
@@ -302,6 +255,17 @@ background-color: grey;
   width: 100px;
 }
 
+#error404 {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/chook.gif');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: $white;
+  text-align: center;
+  top: 50%;
+}
+
 footer {
   background-color: rgba(20, 20, 20, 1);
   padding: 10px 0;
@@ -311,37 +275,3 @@ footer {
   bottom: 0;
   width: 100%;
 }
-//
-// @media only screen and (max-width: 575px) {
-//
-//   header {
-//     height: auto;
-//     nav {
-//       ul {
-//         li {
-//           display: block;
-//           float: none;
-//           text-align: right;
-//           &.menu {
-//             display: block;
-//           }
-//         }
-//         .dropdown {
-//           display: none;
-//         }
-//       }
-//     }
-//   }
-//
-//   #gallery {
-//     .image {
-//       margin-bottom: 20px;
-//     }
-//   }
-//
-//   #menus {
-//     a:not(:last-of-type) {
-//       margin-bottom: 5px;
-//     }
-//   }
-// }

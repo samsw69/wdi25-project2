@@ -40,7 +40,7 @@ function editRoute(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((event) => {
-      if(req.user.id === event.createdBy.toString()) {
+      if( req.user.id === event.createdBy.toString()) {
         return res.render('events/edit', { event });
       }
     })
