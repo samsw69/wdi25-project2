@@ -7,7 +7,7 @@ module.exports = {
     clientSecret: process.env.FB_THE_CHICKEN_COOP_SECRET,
     scope: 'user:email',
     getLoginURL() {
-      return `${this.loginURL}?client_id=${this.clientId}&redirect_uri=https://dashboard.heroku.com/apps/salty-plains-99579/oauth/facebook`;
+      return `${this.loginURL}?client_id=${this.clientId}&redirect_uri=https://salty-plains-99579.herokuapp.com/`;
     }
   }
 };
