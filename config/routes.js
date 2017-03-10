@@ -21,15 +21,6 @@ router.route('/users/:id')
 router.route('/users/:id/edit')
   .get(users.edit);
 
-
-// **HENS INDEX - new addition to show new image for user / is this profile pic or an image upload - may need for admin to upload pics for app
-// router.route('/user/images/new')
-//   .get(secureRoute, users.profileImage);
-
-//new add from instagram app
-// router.route('/user/images')
-//   .post(secureRoute, upload.single('filename'), users.createImage);
-
 router.route('/register')
   .get(registrations.new)
   .post(upload.single('profileImage'), registrations.create);

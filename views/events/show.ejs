@@ -12,36 +12,33 @@
       <p>Things you need to know:  <%= event.description %></p>
       <p>Address: <%= event.address1 %> <%= event.address2 %> <%= event.postcode %></p>
       <div id="map" data-lat="<%= event.lat %>" data-lng="<%= event.lng %>"></div>
-    </div>
+  </div>
 
-    <div class="col-sm-4" id="aside">
-      <p>What's cluck-a-lacking...?</p>
+  <div class="col-sm-4" id="aside">
+    <p>What's cluck-a-lacking...?</p>
 
-      <section>
-        <h4>Commments</h4>
-        <% event.comments.forEach((comment) => { %>
-          <p><%= comment.content %></p>
-          <small><%= comment.createdBy.username %></small>
-
-          <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
-            <form method="POST" action="/events/<%= event.id %>/comments/<%= comment.id %>">
-              <input type="hidden" name="_method" value="DELETE">
-              <button type="button" class="btn btn-outline-info waves-effect">Delete</button>
-            </form>
-          <% } %>
-        <% }) %>
-      </section>
+    <section>
+      <h4>Commments</h4>
+       <% event.comments.forEach((comment) => { %>
+        <p><%= comment.content %></p>
+        <small><%= comment.createdBy.username %></small>
+        <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
+          <form method="POST" action="/events/<%= event.id %>/comments/<%= comment.id %>">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="btn btn-outline-info waves-effect">Delete</button>
+          </form>
+        <% } %>
+      <% }) %>
+    </section>
 
       <% if(locals.isAuthenticated) { %>
         <section>
           <h4>Add a comment</h4>
-          <form method="POST" action="/events/<%= event.id %>/comments">
-            <textarea name="content" id="content" placeholder="Add comment"></textarea>
-            <button type="button" class="btn btn-outline-info waves-effect">Cluck to add</button>
-          </form>
+            <form method="POST" action="/events/<%= event.id %>/comments">
+              <textarea name="content" id="content" placeholder="Add comment"></textarea>
+              <button class="btn btn-outline-info waves-effect">Cluck to Add</button>
+            </form>
         </section>
       <% } %>
-
-    </div>
   </div>
 </div>

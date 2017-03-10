@@ -85,7 +85,7 @@ function deleteCommentRoute(req, res, next) {
   .then((event) => res.redirect(`/events/${event.id}`))
   .catch(next);
 }
-// //if want to use this will need to add additional edit.ejs to the views/users folder
+
 function editRoute(req, res, next) {
   User
     .findById(req.params.id)
