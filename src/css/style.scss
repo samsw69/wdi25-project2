@@ -152,17 +152,11 @@ section {
   margin-bottom: 50px;
   color: #750C75;
 }
-#layoutBasics {
-  padding-left: 50px;
-  font-size: 20px;
-  background-color: #F3EBF9;
-}
 
 #chook {
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/partyGirls.png');
+  background-image: linear-gradient(rgba(100, 0, 200, 0.2), rgba(100, 0, 0, 0.2)), url('../assets/images/partyGirls.png');
   background-size: cover;
-  padding: none;
   position: relative;
   font-family: 'Comfortaa', cursive;
 
@@ -218,6 +212,12 @@ section {
   background-size: cover;
   position: relative;
   font-family: 'Comfortaa', cursive;
+}
+
+#layoutBasics {
+  padding-left: 50px;
+  font-size: 20px;
+  background-color: #F3EBF9;
 }
 
 #map {

@@ -91,7 +91,7 @@ The greatest challenges were:
 1. planning and building the RESTful routes to ensure the correct routes were called depending on the actions required.
 2. In addition, care needed to be taken to ensure the appropriate routes only were made secure.
 3. Managing the multiple files and folders (each with minimal information for purposes of de-coupling) added a level of complexity when troubleshooting.
-4. Planning the look and feel of the layout upfront and then sticking to the theme was challnging, as often the style emerged based on styling ability and know-how.
+4. Planning the look and feel of the layout upfront and then sticking to the theme was challenging, as often the style emerged based on styling ability and know-how.
 5. Bootstrap - a great tool but also requires some knowledge to make best use of it.
 6. Styling!
 
