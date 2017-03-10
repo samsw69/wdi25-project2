@@ -8,8 +8,7 @@ The site is designed to enable an organiser to share key logistical information 
 
 With often disparate groups of friends coming together, there is a focus on encouraging community with the sharing of stories so that attendees can get to know eachother before meeting.  Pictures, anecdotes and contact details are complemented by the ability to add comments. 
 
-
-#####[UPDATE THIS WITH SALTY PLAINS URL!](https://safe-spire-58181.herokuapp.com/)
+#####[Link to Chicken Run site](https://safe-spire-58181.herokuapp.com/)
 
 #####Home Screen
 The welcome screen shows a sassy image of girls on a night out.  From this page, users must either login and authenticate by registering through the app directly or via Facebook.
@@ -58,16 +57,15 @@ Add event to upload a new event, which will show on the index page.
 
 
 ####Approach / How It Works
-This is a full stack application which utilises RESTful routing.  
+This is a full stack application which utilises RESTful routing and authentication. 
 
 Secure routes ensure that only registered users can access the site. Profiles, comments and events can be deleted or edited only by their creator.
 
 #####APIs used
 
 1. Google Maps - autocomplete
-2. Google Maps - XXX
-3. Facebook Login
-4. AWS S3 
+2. Facebook Login
+3. AWS S3 
 
 ####The Build
 
@@ -77,7 +75,14 @@ The following tools are used to build the site.
 * Bootstrap SCSS
 * Javascript 
 * MongoDB
-* The Google Web Fonts 'xxx', 'xxx' and 'xxx' have been used to style the site.
+
+In addition, the following planning and management tools were used:
+
+* Trello for project management
+* Balsamiq for the wireframing (although this evolved during the build)
+
+
+![](./src/assets/images/CR_wireframing.png)
 
 #### Problems & Challenges
 
