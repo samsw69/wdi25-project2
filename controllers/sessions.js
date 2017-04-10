@@ -6,7 +6,7 @@ function sessionsNew(req, res) {
 }
 
 function sessionsCreate(req, res, next) {
-  console.log(req.body);
+
   User
     .findOne({ email: req.body.email })
     .then((user) => {
