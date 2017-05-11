@@ -5,9 +5,10 @@ module.exports = {
     profileURL: '#',
     clientId: process.env.FB_THE_CHICKEN_COOP_ID,
     clientSecret: process.env.FB_THE_CHICKEN_COOP_SECRET,
+    redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/oauth/facebook' : 'https://salty-plains-99579.herokuapp.com/oauth/facebook',
     scope: 'user:email',
     getLoginURL() {
-      return `${this.loginURL}?client_id=${this.clientId}&redirect_uri=https://salty-plains-99579.herokuapp.com/oauth/facebook`;
+      return `${this.loginURL}?client_id=${this.clientId}&redirect_uri=${this.redirectUri}`
     }
   }
 };
