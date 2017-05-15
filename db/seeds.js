@@ -29,7 +29,7 @@ User
     passwordConfirmation: 'password',
     profileImage: 'https://i.ytimg.com/vi/4K_LAgnqqdE/maxresdefault.jpg',
     knowHen: 'I am her sister in Law',
-    funnyStory: 'She farts and blames the dog when she visits for Sunday Dinner and thinks we dont know its her!'
+    funnyStory: 'She eats raw horlicks from the tin!'
   },{
     firstName: 'Emma',
     lastName: 'Hester',
